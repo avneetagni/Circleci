@@ -2,7 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/node:4.8.2
     steps:
       - checkout
-      - run: echo "A first hello"
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@5'
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - run:
+          name: test
+          command: npm test
