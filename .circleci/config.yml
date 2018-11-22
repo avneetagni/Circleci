@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: dockeredwin94/authservice
+      - image: dockeredwin94/authservice:latest
     steps:
       - checkout
       - run:
